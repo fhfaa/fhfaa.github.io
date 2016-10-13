@@ -4,7 +4,9 @@
   <script>
     const HOST = 'http://192.168.2.103:10000';
     const MATCH = (''+location.href).match(/x=(\w+)/);
-    location.href = HOST + '/' + ((MATCH && MATCH[1]) || '');
+    if (MATCH) { location.href = HOST + '/' + ((MATCH && MATCH[1]) || ''); }
   </script>
+  <li><a href="./?x=admin">Admin</a></li>
+  <li><a href="./?x=app">Remote</a></li>
 </body>
 </html>
