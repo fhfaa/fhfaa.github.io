@@ -1,4 +1,10 @@
 <!DOCTYPE html>
 <html>
-<body onload="location.href='http://192.168.2.103:10000/receiver/receiver.html';">@gh</body>
+<body>
+  <script>
+    const HOST = 'http://192.168.2.103:10000';
+    const MATCH = (''+location.href).match(/x=(\w+)/);
+    location.href = HOST + '/' + ((MATCH && MATCH[1]) || '');
+  </script>
+</body>
 </html>
