@@ -5,7 +5,7 @@
   <script>
     const HOST = 'http://192.168.2.105:10000/%x/%x.html';
     const MATCH = (''+location.href).match(/x=(\w+)/);
-    if (MATCH && MATCH[0]) { location.href = HOST.replace(/%x/g, MATCH[0]); }
+    if (MATCH && MATCH[1]) { location.href = HOST.replace(/%x/g, MATCH[1]); }
   </script>
   <li><a href="./?x=admin">Admin</a></li>
   <li><a href="./?x=app">Remote</a></li>
