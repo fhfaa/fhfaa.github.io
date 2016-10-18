@@ -11,10 +11,10 @@
     list-style-type: none;
   }</style>
   <script>
-    function go2(txt) {
-      location.href = 'http://192.168.2.105:10000/%x/%x.html'.replace(/%x/g, MATCH[1]);
+    function go2(s) {
+      location.href = 'http://192.168.2.105:10000/%x/%x.html'.replace(/%x/g, s);
     }
-    var MATCH = (''+location.href).match(/x=(\w+)/);
+    const MATCH = (''+location.href).match(/x=(\w+)/);
     if (MATCH && MATCH[1]) { go2(MATCH[1]); }
   </script>
   <li><a onclick="go2('admin');">Admin</a></li>
