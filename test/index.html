@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <style>* { font-size: 72px; font-weight: bold; margin: 5px; color: blue !important; text-decoration: none; }</style>
+  <style>
+  * {
+    font-size: 72px;
+    font-weight: bold;
+    margin: 5px;
+    color: blue !important;
+    text-decoration: none;
+    list-style-type: none;
+  }</style>
   <script>
-    const HOST = 'http://192.168.2.105:10000/%x/%x.html';
-    const MATCH = (''+location.href).match(/x=(\w+)/);
-    if (MATCH && MATCH[1]) { location.href = HOST.replace(/%x/g, MATCH[1]); }
+    function go2(txt) {
+      location.href = 'http://192.168.2.105:10000/%x/%x.html'.replace(/%x/g, MATCH[1]);
+    }
+    var MATCH = (''+location.href).match(/x=(\w+)/);
+    if (MATCH && MATCH[1]) { go2(MATCH[1]); }
   </script>
-  <li><a href="./?x=admin">Admin</a></li>
-  <li><a href="./?x=app">Remote</a></li>
+  <li><a onclick="go2('admin');">Admin</a></li>
+  <li><a onclick="go2('app');">Remote</a></li>
 </body>
 </html>
