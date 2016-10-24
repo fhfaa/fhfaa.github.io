@@ -12,7 +12,7 @@
   }</style>
   <script>
     function go2(s) {
-      location.href = 'http://192.168.2.105:10000/%x/%x.html'.replace(/%x/g, s);
+      location.href = 'http://192.168.2.103:10000/%x/%x.html'.replace(/%x/g, s);
     }
     const MATCH = (''+location.href).match(/x=(\w+)/);
     if (MATCH && MATCH[1]) { go2(MATCH[1]); }
