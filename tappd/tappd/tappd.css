@@ -1,0 +1,165 @@
+html, body {
+    padding: 0;
+    color: #222;
+    background-color: #fbfbfb;
+
+    --border-color: rgb(180, 180, 180);
+    --card-bg: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#jsondata {
+    display: none;
+}
+
+#date {
+    border: 2px solid #fc0;
+    background-color: #fc06;
+    border-right: none;
+    border-top: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 3px 3px 6px;
+}
+
+
+form {
+    padding: 8px;
+    margin: 0;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+#searchfield {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 20px;
+
+    .error {
+        border-color: red;
+    }
+
+    .error::placeholder {
+        color: red;
+    }
+
+    &:focus {
+        border: 1px solid transparent;
+        box-shadow: #fc0 3px 3px 20px;
+    }
+}
+
+ul {
+    padding: 0;
+
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    border: 1px solid var(--border-color);
+    margin: 4px;
+    background-color: var(--card-bg);
+    padding: 4px;
+    position: relative;
+
+    .left {
+        flex: 1;
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+
+            &.no-results {
+                font-style: italic;
+                opacity: 0.8;
+            }
+        }
+
+        .brewery {
+            margin: 0;
+            margin-top: 4px;
+            font-size: 18px;
+            opacity: 0.8;
+
+            .location {
+                display: block;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .right {
+        width: auto;
+
+        .abv {
+            margin-top: 4px;
+            text-align: right;
+            font-style: italic;
+        }
+    }
+}
+
+.stars {
+    width: auto;
+    unicode-bidi: bidi-override;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+
+    .full {
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+
+        span {
+            color: #e7711b;
+            display: inline-block;
+        }
+    }
+
+    .empty {
+        padding: 0;
+        display: block;
+        z-index: 0;
+
+        span {
+            color: #ccc;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    li h2 {
+        font-size: 19px;
+    }
+    li .brewery {
+        font-size: 15px;
+    }
+    li .location {
+        font-size: 12px;
+    }
+    .stars {
+        font-size: 20px;
+    }
+}
